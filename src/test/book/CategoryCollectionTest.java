@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class CategoryCollectionTest {
+class CategoryCollectionTest {
     @Test
     void serialize() throws IOException, UnnamedCookBookException {
         CategoryCollection collection1 = new CategoryCollection();

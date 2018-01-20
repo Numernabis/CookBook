@@ -12,7 +12,9 @@ import java.util.List;
 public enum Ingredient implements Serializable {
     // name( isMeat, units )
     Hazelnut(false, Arrays.asList(MassUnit.values())),
+    Beef(true, Arrays.asList(MassUnit.values())),
     ChorizoSausage(true, Arrays.asList(MassUnit.values())),
+    Rice(false, Arrays.asList(MassUnit.values())),
     Flour(false, Arrays.asList(MassUnit.values())),
     Salt(false, Arrays.asList(MassUnit.values())),
     Potatoes(false, Arrays.asList(MassUnit.values())),
