@@ -66,7 +66,7 @@ public class Category implements Serializable {
 
     public List<String> getTableOfContents() {
         List<String> tableOfContents = new ArrayList<>(recipes.keySet());
-        Collections.sort(tableOfContents, String::compareTo);
+        Collections.sort(tableOfContents);
         return tableOfContents;
     }
 

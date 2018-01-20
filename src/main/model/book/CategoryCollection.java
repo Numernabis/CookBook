@@ -47,7 +47,7 @@ public class CategoryCollection implements Serializable {
         categories.remove(categoryName);
     }
 
-    public void renameCookBook(String oldName, String newName)
+    public void renameCategory(String oldName, String newName)
             throws NotFoundCategoryException, DuplicateCategoryException {
         Category category = categories.get(oldName);
         if (category == null)
@@ -62,28 +62,43 @@ public class CategoryCollection implements Serializable {
     public void serialize(String outputFilePath) throws IOException, UnnamedCookBookException {
         if (this.cookBookName.equals("unnamed"))
             throw new UnnamedCookBookException();
-        File file = new File(outputFilePath);
-        FileOutputStream fileOut = new FileOutputStream(file);
-        ObjectOutputStream out = new ObjectOutputStream(fileOut);
-        out.writeObject(this);
-        out.close();
-        fileOut.close();
+        try {
+            File file = new File(outputFilePath);
+            FileOutputStream fileOut = new FileOutputStream(file);
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(this);
+            out.close();
+            fileOut.close();
+            System.out.println("Serialized data is saved in " + outputFilePath);
+        } catch (IOException io) {
+            System.out.println("Błąd odczytu pliku");
+            io.printStackTrace();
+        }
     }
 
     public static CategoryCollection deserialize(String inputFilePath)
             throws ClassNotFoundException, IOException {
-        FileInputStream fileIn = new FileInputStream(inputFilePath);
-        ObjectInputStream in = new ObjectInputStream(fileIn);
-        CategoryCollection importedCollection = (CategoryCollection) in.readObject();
-        in.close();
-        fileIn.close();
-        return importedCollection;
+        try {
+            FileInputStream fileIn = new FileInputStream(inputFilePath);
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+            CategoryCollection importedCollection = (CategoryCollection) in.readObject();
+            in.close();
+            fileIn.close();
+            return importedCollection;
+        } catch (IOException io) {
+            System.out.println("Błąd odczytu pliku");
+            io.printStackTrace();
+        } catch (ClassNotFoundException c) {
+            System.out.println("CategoryCollection class not found.");
+            c.printStackTrace();
+        }
+        return null;
     }
 
 
     public List<String> getTableOfContents() {
         List<String> tableOfContents = new ArrayList<>(categories.keySet());
-        Collections.sort(tableOfContents, String::compareTo);
+        Collections.sort(tableOfContents);
         return tableOfContents;
     }
 
