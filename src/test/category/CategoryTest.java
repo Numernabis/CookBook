@@ -19,7 +19,9 @@ class CategoryTest {
         Recipe recipe = new Recipe("omelette");
         testCategory.addRecipe(recipe);
         assertEquals(testCategory.getRecipe("omelette"), recipe);
-        assertThrows(DuplicateRecipeException.class, () -> testCategory.addRecipe(recipe));
+        assertThrows(DuplicateRecipeException.class, () -> {
+            testCategory.addRecipe(recipe);
+        });
     }
 
     @Test
@@ -42,8 +44,9 @@ class CategoryTest {
         testCategory.addRecipe(recipe2);
         testCategory.renameRecipe("muffin", "chocolate muffin");
         assertEquals(testCategory.getRecipe("chocolate muffin"), recipe);
-        assertThrows(DuplicateRecipeException.class,
-                () -> testCategory.renameRecipe("chocolate muffin", "chilli"));
+        assertThrows(DuplicateRecipeException.class, () -> {
+            testCategory.renameRecipe("chocolate muffin", "chilli");
+        });
     }
 
     @Test
