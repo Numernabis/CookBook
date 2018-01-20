@@ -25,7 +25,7 @@ public class RecipeIngredient implements Serializable {
         this(ingredient, unit, 1);
     }
 
-    public void convertUnit(ICalculable unit) throws UnitConversionException {
+    public void convertToUnit(ICalculable unit) throws UnitConversionException {
         double fraction = this.unit.getValueIn(unit);
         quantity *= fraction;
         this.unit = unit;
@@ -55,9 +55,9 @@ public class RecipeIngredient implements Serializable {
             return false;
         if (this.ingredient != ((RecipeIngredient) obj).ingredient)
             return false;
-        return (Math.abs(this.unit.getFractionOfBasicUnit() * this.quantity -
-                (((RecipeIngredient) obj).unit).getFractionOfBasicUnit() * ((RecipeIngredient) obj).quantity) < E);
-
+        double thisQuantity = this.unit.getFractionOfBasicUnit() * this.quantity;
+        double objQuantity = (((RecipeIngredient) obj).unit).getFractionOfBasicUnit() * ((RecipeIngredient) obj).quantity;
+        return (thisQuantity - objQuantity < E);
     }
 
 }

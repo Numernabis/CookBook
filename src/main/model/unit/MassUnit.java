@@ -3,7 +3,7 @@ package main.model.unit;
 import java.io.Serializable;
 
 public enum MassUnit implements ICalculable, Serializable {
-    Kilogram(1), Gram(0.001), Pound(0.4535);
+    Kilogram(1), Decagram(0.01), Gram(0.001);
 
     private double fractionOfKilogram;
 

@@ -71,9 +71,7 @@ public class Recipe implements Serializable {
     }
 
     // gettery
-    public String getRecipeName() {
-        return recipeName;
-    }
+    public String getRecipeName() { return recipeName; }
 
     public Duration getPreparationTime() {
         return preparationTime;

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CategoryTest {
@@ -17,8 +18,8 @@ class CategoryTest {
         Category testCategory = new Category("testCategory");
         Recipe recipe = new Recipe("omelette");
         testCategory.addRecipe(recipe);
-        assertEquals(testCategory.getRecipe("omelette"),recipe);
-        assertThrows(DuplicateRecipeException.class, ()->testCategory.addRecipe(recipe) );
+        assertEquals(testCategory.getRecipe("omelette"), recipe);
+        assertThrows(DuplicateRecipeException.class, () -> testCategory.addRecipe(recipe));
     }
 
     @Test
@@ -26,9 +27,9 @@ class CategoryTest {
         Category testCategory = new Category("testCategory");
         Recipe recipe = new Recipe("muffin");
         testCategory.addRecipe(recipe);
-        assertTrue(testCategory.getRecipe("muffin") != null );
+        assertTrue(testCategory.getRecipe("muffin") != null);
         testCategory.removeRecipe("muffin");
-        assertTrue(testCategory.getRecipe("muffin") == null );
+        assertTrue(testCategory.getRecipe("muffin") == null);
     }
 
     @Test
@@ -42,7 +43,7 @@ class CategoryTest {
         testCategory.renameRecipe("muffin", "chocolate muffin");
         assertEquals(testCategory.getRecipe("chocolate muffin"), recipe);
         assertThrows(DuplicateRecipeException.class,
-                ()-> testCategory.renameRecipe("chocolate muffin", "chilli"));
+                () -> testCategory.renameRecipe("chocolate muffin", "chilli"));
     }
 
     @Test
@@ -58,8 +59,8 @@ class CategoryTest {
         recipe.addIngredient(new RecipeIngredient(Ingredient.Butter, VolumeUnit.TableSpoon, 1));
         testCategory.addRecipe(recipe3);
 
-        assertEquals(testCategory.getRecipes(Recipe::isVegetarian).size(),2);
-        assertNotEquals(testCategory.getRecipes(Recipe::isVegetarian).size(),1);
+        assertEquals(testCategory.getRecipes(Recipe::isVegetarian).size(), 2);
+        assertNotEquals(testCategory.getRecipes(Recipe::isVegetarian).size(), 1);
     }
 
     @Test
