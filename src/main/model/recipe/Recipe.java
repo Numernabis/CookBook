@@ -36,7 +36,7 @@ public class Recipe implements Serializable {
     }
 
     public void removeIngredient(int index) throws IndexOutOfBoundsException {
-        if (recipeIngredientList.size() <= index || index < 0)
+        if ( index >= recipeIngredientList.size() || index < 0)
             throw new IndexOutOfBoundsException();
         else
             recipeIngredientList.remove(index);
@@ -47,7 +47,7 @@ public class Recipe implements Serializable {
     }
 
     public void removeDirection(int index) throws IndexOutOfBoundsException {
-        if (directions.size() <= index || index < 0)
+        if (index >= directions.size() || index < 0)
             throw new IndexOutOfBoundsException();
         else
             directions.remove(index);
