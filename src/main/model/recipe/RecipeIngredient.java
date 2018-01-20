@@ -53,7 +53,7 @@ public class RecipeIngredient implements Serializable {
             return false;
         if (!(obj instanceof RecipeIngredient))
             return false;
-        if (!(this.ingredient == ((RecipeIngredient) obj).ingredient))
+        if (this.ingredient != ((RecipeIngredient) obj).ingredient)
             return false;
         return (Math.abs(this.unit.getFractionOfBasicUnit() * this.quantity -
                 (((RecipeIngredient) obj).unit).getFractionOfBasicUnit() * ((RecipeIngredient) obj).quantity) < E);

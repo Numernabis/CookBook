@@ -57,22 +57,6 @@ public class Recipe implements Serializable {
         return !this.contains(Ingredient::isMeat);
     }
 
-    // ?
-    public boolean canBeMadeWith(List<Ingredient> ingredientList) {
-        for (RecipeIngredient recipeIngredient : recipeIngredientList) {
-            boolean isInList = false;
-            for (Ingredient ingredient : ingredientList) {
-                if (recipeIngredient.getIngredient() == ingredient) {
-                    isInList = true;
-                    break;
-                }
-            }
-            if (!isInList)
-                return false;
-        }
-        return true;
-    }
-
     // settery
     public void setCookingTime(Duration cookingTime) {
         this.cookingTime = cookingTime;
@@ -130,18 +114,12 @@ public class Recipe implements Serializable {
         return true;
     }
 
-    //?
     private boolean contains(Predicate<Ingredient> checker) {
-        for (RecipeIngredient recipeIngredient : recipeIngredientList) {
-            if (checker.test(recipeIngredient.getIngredient()))
+        for (RecipeIngredient ing : recipeIngredientList) {
+            if (checker.test(ing.getIngredient()))
                 return true;
         }
         return false;
-    }
-
-    private boolean contains2(Predicate<Ingredient> checker) {
-        return recipeIngredientList.stream()
-                .anyMatch(l -> checker.test(l.getIngredient()));
     }
 
 }

@@ -1,4 +1,99 @@
 package main.model.book;
 
-public class CategoryCollection {
+import main.model.category.Category;
+
+import java.io.*;
+import java.util.*;
+
+// https://www.tutorialspoint.com/java/java_serialization.htm
+
+public class CategoryCollection implements Serializable {
+
+    private Map<String, Category> categories;
+    private String cookBookName;
+
+    public CategoryCollection(String cookBookName, Map<String, Category> categories) {
+        this.categories = categories;
+        this.cookBookName = cookBookName;
+    }
+
+    public CategoryCollection() {
+        this("unnamed", new HashMap<>());
+    }
+
+    public CategoryCollection(Map<String, Category> categories) {
+        this("unnamed", categories);
+    }
+
+    public CategoryCollection(String cookBookName) {
+        this(cookBookName, new HashMap<>());
+    }
+
+    public void addCategory(Category category) throws DuplicateCategoryException {
+        if (categories.get(category.getCategoryName()) != null)
+            throw new DuplicateCategoryException();
+        else categories.put(category.getCategoryName(), category);
+    }
+
+    public Category getCategory(String categoryName) throws NotFoundCategoryException {
+        Category category = categories.get(categoryName);
+        if (category == null)
+            throw new NotFoundCategoryException();
+        else
+            return category;
+    }
+
+    public void removeCategory(String categoryName) {
+        categories.remove(categoryName);
+    }
+
+    public void renameCookBook(String oldName, String newName)
+            throws NotFoundCategoryException, DuplicateCategoryException {
+        Category category = categories.get(oldName);
+        if (category == null)
+            throw new NotFoundCategoryException();
+        if (categories.get(newName) != null)
+            throw new DuplicateCategoryException();
+        categories.remove(oldName);
+        category.setCategoryName(newName);
+        categories.put(newName, category);
+    }
+
+    public void serialize(String outputFilePath) throws IOException, UnnamedCookBookException {
+        if (this.cookBookName.equals("unnamed"))
+            throw new UnnamedCookBookException();
+        File file = new File(outputFilePath);
+        FileOutputStream fileOut = new FileOutputStream(file);
+        ObjectOutputStream out = new ObjectOutputStream(fileOut);
+        out.writeObject(this);
+        out.close();
+        fileOut.close();
+    }
+
+    public static CategoryCollection deserialize(String inputFilePath)
+            throws ClassNotFoundException, IOException {
+        FileInputStream fileIn = new FileInputStream(inputFilePath);
+        ObjectInputStream in = new ObjectInputStream(fileIn);
+        CategoryCollection importedCollection = (CategoryCollection) in.readObject();
+        in.close();
+        fileIn.close();
+        return importedCollection;
+    }
+
+
+    public List<String> getTableOfContents() {
+        List<String> tableOfContents = new ArrayList<>(categories.keySet());
+        Collections.sort(tableOfContents, String::compareTo);
+        return tableOfContents;
+    }
+
+    public String getCookBookName() {
+        return cookBookName;
+    }
+
+    public void setCookBookName(String cookBookName) {
+        this.cookBookName = cookBookName;
+    }
+
 }
+
