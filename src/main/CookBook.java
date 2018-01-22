@@ -2,6 +2,11 @@ package main;
 
 import main.controler.Conductor;
 import main.controler.parser.StringParser;
+import main.model.book.*;
+import main.model.category.*;
+import main.model.recipe.*;
+import main.model.ingredient.*;
+import main.model.unit.*;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,8 +18,13 @@ public class CookBook {
         Conductor conductor = new Conductor(new StringParser());
 
         StringBuffer b = new StringBuffer();
-        for (int i = 1; i < 15; i++)
-            b.append('\u058D');
+        for (int i = 0; i < 20; i++) {
+            //b.append('\u058D');
+            //b.append('\u2B2D');
+            //b.append('\u26FE');
+            if(i % 2 == 0) b.append('\u2615');
+            else b.append(' ');
+        }
 
         String info = "Welcome in CookBook :)\n";
         info += b;
@@ -36,5 +46,9 @@ public class CookBook {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void addSampleRecipes() {
+
     }
 }

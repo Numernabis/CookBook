@@ -58,6 +58,7 @@ public class DataViewer {
             recipeData += "\t" + String.valueOf(index) + ". " + direction + "\n";
             index++;
         }
+        recipeData += "\nTotal cost of ingredients: " + recipe.countPrice() + "\n\n";
 
         System.out.println(recipeData);
     }

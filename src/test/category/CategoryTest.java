@@ -1,8 +1,8 @@
 package test.category;
 
 import main.model.category.*;
-import main.model.ingredient.Ingredient;
 import main.model.recipe.*;
+import main.model.ingredient.*;
 import main.model.unit.*;
 
 import java.util.ArrayList;

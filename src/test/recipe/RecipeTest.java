@@ -1,7 +1,7 @@
 package test.recipe;
 
-import main.model.ingredient.Ingredient;
 import main.model.recipe.*;
+import main.model.ingredient.*;
 import main.model.unit.*;
 
 import org.junit.jupiter.api.Test;

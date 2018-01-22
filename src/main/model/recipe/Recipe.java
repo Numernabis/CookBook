@@ -57,7 +57,7 @@ public class Recipe implements Serializable {
         return !this.contains(Ingredient::isMeat);
     }
 
-    // settery
+    // setters
     public void setCookingTime(Duration cookingTime) {
         this.cookingTime = cookingTime;
     }
@@ -70,7 +70,7 @@ public class Recipe implements Serializable {
         this.recipeName = recipeName;
     }
 
-    // gettery
+    // getters
     public String getRecipeName() { return recipeName; }
 
     public Duration getPreparationTime() {
@@ -87,6 +87,14 @@ public class Recipe implements Serializable {
 
     public List<String> getDirections() {
         return directions;
+    }
+
+    public double countPrice() {
+        double totalPrice = 0.0;
+        for(RecipeIngredient rIng : recipeIngredientList){
+            totalPrice += rIng.getIngredient().getPrice() * rIng.getQuantity();
+        }
+        return totalPrice;
     }
 
 

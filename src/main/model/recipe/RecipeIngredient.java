@@ -1,8 +1,7 @@
 package main.model.recipe;
 
 import main.model.ingredient.Ingredient;
-import main.model.unit.ICalculable;
-import main.model.unit.UnitConversionException;
+import main.model.unit.*;
 
 import java.io.Serializable;
 
@@ -36,6 +35,8 @@ public class RecipeIngredient implements Serializable {
             throw new IllegalQuantityException();
         this.quantity = quantity;
     }
+
+    public double getQuantity() { return quantity; }
 
     public Ingredient getIngredient() {
         return ingredient;
