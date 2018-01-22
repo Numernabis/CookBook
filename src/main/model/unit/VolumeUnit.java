@@ -3,8 +3,7 @@ package main.model.unit;
 import java.io.Serializable;
 
 public enum VolumeUnit implements ICalculable, Serializable {
-    Liter(1), Cup(0.25),
-    TableSpoon(0.015), TeaSpoon(0.005);
+    Liter(1), Cup(0.25), TableSpoon(0.015), TeaSpoon(0.005);
 
     private double fractionOfLiter;
 
@@ -17,7 +16,7 @@ public enum VolumeUnit implements ICalculable, Serializable {
     }
 
     public static boolean isValueOf(String str) {
-        for (MassUnit unit : MassUnit.values()) {
+        for (VolumeUnit unit : VolumeUnit.values()) {
             if (str.equals(unit.toString()))
                 return true;
         }

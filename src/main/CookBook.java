@@ -19,9 +19,6 @@ public class CookBook {
 
         StringBuffer b = new StringBuffer();
         for (int i = 0; i < 20; i++) {
-            //b.append('\u058D');
-            //b.append('\u2B2D');
-            //b.append('\u26FE');
             if(i % 2 == 0) b.append('\u2615');
             else b.append(' ');
         }
@@ -46,9 +43,5 @@ public class CookBook {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public void addSampleRecipes() {
-
     }
 }

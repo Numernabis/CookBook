@@ -7,8 +7,8 @@ import java.io.Serializable;
 
 public class RecipeIngredient implements Serializable {
     private Ingredient ingredient;
-    private ICalculable unit;
-    private double quantity;
+    public ICalculable unit;
+    public double quantity;
 
     public RecipeIngredient(Ingredient ingredient, ICalculable unit, double quantity)
             throws IllegalQuantityException, IllegalUnitException {

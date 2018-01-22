@@ -1,31 +1,33 @@
 package main.model.book;
 
 import main.model.category.Category;
+import main.model.category.DuplicateRecipeException;
+import main.model.recipe.Recipe;
 
 import java.io.*;
 import java.util.*;
 
 // https://www.tutorialspoint.com/java/java_serialization.htm
 
-public class CategoryCollection implements Serializable {
+public class CookBook implements Serializable {
 
     private Map<String, Category> categories;
     private String cookBookName;
 
-    public CategoryCollection(String cookBookName, Map<String, Category> categories) {
+    public CookBook(String cookBookName, Map<String, Category> categories) {
         this.categories = categories;
         this.cookBookName = cookBookName;
     }
 
-    public CategoryCollection() {
+    public CookBook() {
         this("unnamed", new HashMap<>());
     }
 
-    public CategoryCollection(Map<String, Category> categories) {
+    public CookBook(Map<String, Category> categories) {
         this("unnamed", categories);
     }
 
-    public CategoryCollection(String cookBookName) {
+    public CookBook(String cookBookName) {
         this(cookBookName, new HashMap<>());
     }
 
@@ -69,27 +71,26 @@ public class CategoryCollection implements Serializable {
             out.writeObject(this);
             out.close();
             fileOut.close();
-            System.out.println("Serialized data is saved in " + outputFilePath);
         } catch (IOException io) {
-            System.out.println("Błąd odczytu pliku");
+            System.out.println("Unable to read file.");
             io.printStackTrace();
         }
     }
 
-    public static CategoryCollection deserialize(String inputFilePath)
+    public static CookBook deserialize(String inputFilePath)
             throws ClassNotFoundException, IOException {
         try {
             FileInputStream fileIn = new FileInputStream(inputFilePath);
             ObjectInputStream in = new ObjectInputStream(fileIn);
-            CategoryCollection importedCollection = (CategoryCollection) in.readObject();
+            CookBook importedCollection = (CookBook) in.readObject();
             in.close();
             fileIn.close();
             return importedCollection;
         } catch (IOException io) {
-            System.out.println("Błąd odczytu pliku");
+            System.out.println("Unable to read file.");
             io.printStackTrace();
         } catch (ClassNotFoundException c) {
-            System.out.println("CategoryCollection class not found.");
+            System.out.println("CookBook class not found.");
             c.printStackTrace();
         }
         return null;
@@ -110,5 +111,19 @@ public class CategoryCollection implements Serializable {
         this.cookBookName = cookBookName;
     }
 
+    public void merge(CookBook other) {
+        for (Category category : other.categories.values()) {
+            Category temp = categories.get(category.getCategoryName());
+            if (temp == null)
+                categories.put(category.getCategoryName(), category);
+            else {
+                if (!category.equals(temp)) {
+                    category.setCategoryName(other.getCookBookName() + "." + category.getCategoryName());
+                    temp.setCategoryName(this.getCookBookName() + "." + temp.getCategoryName());
+                    categories.put(category.getCategoryName(), category);
+                }
+            }
+        }
+    }
 }
 

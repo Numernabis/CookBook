@@ -144,7 +144,7 @@ public class RecipeExecutor extends UnfocusedExecutor implements IExecutionStrat
         } catch (IllegalUnitException e) {
             viewManager.noteViewer.printErrorNote(e.getMessage());
         } catch (IllegalQuantityException e) {
-            viewManager.noteViewer.printErrorNote("Failed to add Ingredient " + e.getMessage());
+            viewManager.noteViewer.printErrorNote("Failed to add Ingredient:\n" + e.getMessage());
         }
     }
 

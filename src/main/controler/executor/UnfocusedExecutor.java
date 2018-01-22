@@ -40,7 +40,7 @@ public class UnfocusedExecutor implements IExecutionStrategy {
                 break;
             }
             case "/showCategories": {
-                viewManager.dataViewer.showCategories(conductor.getCategoryCollection().getTableOfContents());
+                viewManager.dataViewer.showCategories(conductor.getCookBook().getTableOfContents());
                 break;
             }
             case "/selectCategory": {
@@ -64,7 +64,7 @@ public class UnfocusedExecutor implements IExecutionStrategy {
                 break;
             }
             case "/showCookBookName": {
-                viewManager.noteViewer.printNote("CookBookName: " + conductor.getCategoryCollection().getCookBookName());
+                viewManager.noteViewer.printNote("CookBookName: " + conductor.getCookBook().getCookBookName());
                 break;
             }
             case "/unfocus": {
@@ -84,7 +84,7 @@ public class UnfocusedExecutor implements IExecutionStrategy {
     private void selectCategory(List<String> commandLine) {
         try {
             String categoryName = commandLine.get(1);
-            Category category = conductor.getCategoryCollection().getCategory(categoryName);
+            Category category = conductor.getCookBook().getCategory(categoryName);
             conductor.setFocusedObject(category);
         } catch (IndexOutOfBoundsException e) {
             viewManager.noteViewer.printErrorNote("Failed to select Category, because name was not defined.");
@@ -97,8 +97,9 @@ public class UnfocusedExecutor implements IExecutionStrategy {
     private void importCookBook(List<String> commandLine) {
         try {
             String path = commandLine.get(1);
-            CategoryCollection cookBook = CategoryCollection.deserialize(path);
-            cookBook.setCookBookName("imported");
+            CookBook importedCookBook = CookBook.deserialize(path);
+            CookBook currentCookBook = conductor.getCookBook();
+            currentCookBook.merge(importedCookBook);
             viewManager.noteViewer.printNote("Successfully imported CookBook from " + path);
         } catch (IndexOutOfBoundsException e) {
             viewManager.noteViewer.printErrorNote("Failed to import CookBook because path was not given.");
@@ -120,7 +121,7 @@ public class UnfocusedExecutor implements IExecutionStrategy {
     private void exportCookBook(List<String> commandLine) {
         try {
             String path = commandLine.get(1);
-            conductor.getCategoryCollection().serialize(path);
+            conductor.getCookBook().serialize(path);
             viewManager.noteViewer.printNote("Successfully exported CookBook to " + path);
         } catch (IndexOutOfBoundsException e) {
             viewManager.noteViewer.printErrorNote("Failed to export CookBook because name was not defined.");
@@ -135,7 +136,7 @@ public class UnfocusedExecutor implements IExecutionStrategy {
     private void createCategory(List<String> commandLine) {
         try {
             String name = commandLine.get(1);
-            conductor.getCategoryCollection().addCategory(new Category(name));
+            conductor.getCookBook().addCategory(new Category(name));
         } catch (IndexOutOfBoundsException e) {
             viewManager.noteViewer.printErrorNote("Failed to create category - name was not defined.");
         } catch (DuplicateCategoryException e) {
@@ -145,7 +146,7 @@ public class UnfocusedExecutor implements IExecutionStrategy {
 
     private void setCookBookName(List<String> commandLine) {
         try {
-            conductor.getCategoryCollection().setCookBookName(commandLine.get(1));
+            conductor.getCookBook().setCookBookName(commandLine.get(1));
         } catch (IndexOutOfBoundsException e) {
             viewManager.noteViewer.printErrorNote("Failed to set CookBookName because name was not provided.");
         }
@@ -165,7 +166,7 @@ public class UnfocusedExecutor implements IExecutionStrategy {
 
     private void removeCategory(List<String> commandLine) {
         try {
-            conductor.getCategoryCollection().removeCategory(commandLine.get(1));
+            conductor.getCookBook().removeCategory(commandLine.get(1));
         } catch (IndexOutOfBoundsException e) {
             viewManager.noteViewer.printErrorNote("Failed to remove category because name was not provided.");
         }

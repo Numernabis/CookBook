@@ -2,14 +2,14 @@ package main.controler;
 
 import main.controler.executor.*;
 import main.controler.parser.IParser;
+import main.model.book.CookBook;
 import main.model.category.Category;
-import main.model.book.CategoryCollection;
 import main.model.recipe.*;
 import main.view.ViewManager;
 
 public class Conductor {
     public IParser parser;
-    private CategoryCollection categoryCollection;
+    private CookBook cookBook;
     private ViewManager viewManager;
 
     public IExecutionStrategy executionStrategy;
@@ -22,7 +22,7 @@ public class Conductor {
         focusedObject = null;
         viewManager = new ViewManager();
         executionStrategy = new UnfocusedExecutor(this);
-        categoryCollection = new CategoryCollection();
+        cookBook = new CookBook();
     }
 
     public Object getFocusedObject() {
@@ -33,8 +33,8 @@ public class Conductor {
         return viewManager;
     }
 
-    public CategoryCollection getCategoryCollection() {
-        return categoryCollection;
+    public CookBook getCookBook() {
+        return cookBook;
     }
 
     public Object getParentObject() {

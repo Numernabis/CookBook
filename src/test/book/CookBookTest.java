@@ -9,30 +9,30 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CategoryCollectionTest {
+class CookBookTest {
 
     @Test
     void serialize() throws IOException, UnnamedCookBookException {
-        CategoryCollection collection1 = new CategoryCollection();
+        CookBook collection1 = new CookBook();
         assertThrows(UnnamedCookBookException.class, () -> {
             collection1.serialize("coll2.txt");
         });
-        CategoryCollection collection2 = new CategoryCollection("coll2");
+        CookBook collection2 = new CookBook("coll2");
         collection2.serialize("coll2.txt");
     }
 
     @Test
     void deserialize() throws IOException, UnnamedCookBookException, ClassNotFoundException {
         String filepath = "coll2.txt";
-        CategoryCollection collection2 = new CategoryCollection("coll2");
-        // assertThrows(IOException.class, () -> CategoryCollection.deserialize(filepath));
+        CookBook collection2 = new CookBook("coll2");
+        // assertThrows(IOException.class, () -> CookBook.deserialize(filepath));
         collection2.serialize(filepath);
-        collection2 = CategoryCollection.deserialize(filepath);
+        collection2 = CookBook.deserialize(filepath);
     }
 
     @Test
     void renameCategory() throws NotFoundCategoryException, DuplicateCategoryException {
-        CategoryCollection collection2 = new CategoryCollection("coll2");
+        CookBook collection2 = new CookBook("coll2");
         Category cat1 = new Category("dinner");
         collection2.addCategory(cat1);
         Category cat2 = new Category("supper");

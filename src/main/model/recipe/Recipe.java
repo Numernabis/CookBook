@@ -1,12 +1,17 @@
 package main.model.recipe;
 
 import main.model.ingredient.Ingredient;
+import main.model.unit.*;
 
 import java.io.Serializable;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
+
+import static main.model.unit.MassUnit.Kilogram;
+import static main.model.unit.OtherUnit.Unit;
+import static main.model.unit.VolumeUnit.Liter;
 
 
 public class Recipe implements Serializable {
@@ -92,7 +97,30 @@ public class Recipe implements Serializable {
     public double countPrice() {
         double totalPrice = 0.0;
         for(RecipeIngredient rIng : recipeIngredientList){
-            totalPrice += rIng.getIngredient().getPrice() * rIng.getQuantity();
+
+            double fraction = 1.0;
+            if (rIng.unit.getClass().equals(VolumeUnit.class))
+                try {
+                    fraction = rIng.unit.getValueIn(Liter);
+                } catch (UnitConversionException e) {
+                    e.printStackTrace();
+                }
+            else if (rIng.unit.getClass().equals(MassUnit.class))
+                try {
+                    fraction = rIng.unit.getValueIn(Kilogram);
+                } catch (UnitConversionException e) {
+                    e.printStackTrace();
+                }
+            else
+                try {
+                    fraction = rIng.unit.getValueIn(Unit);
+                } catch (UnitConversionException e) {
+                    e.printStackTrace();
+                }
+
+            double quantityInBasicUnit = fraction * rIng.getQuantity();
+            totalPrice += rIng.getIngredient().getPrice() * quantityInBasicUnit;
+
         }
         return totalPrice;
     }

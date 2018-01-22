@@ -59,7 +59,7 @@ public class CategoryExecutor extends UnfocusedExecutor implements IExecutionStr
     private void setCategoryName(List<String> commandLine) {
         try {
             String oldName = ((Category) conductor.getFocusedObject()).getCategoryName();
-            conductor.getCategoryCollection().renameCategory(oldName, commandLine.get(1));
+            conductor.getCookBook().renameCategory(oldName, commandLine.get(1));
         } catch (NotFoundCategoryException e) {
             viewManager.noteViewer.printErrorNote("Failed to set CategoryName, because there is no such category.");
         } catch (DuplicateCategoryException e) {
