@@ -18,6 +18,7 @@ class CategoryTest {
         Category testCategory = new Category("testCategory");
         Recipe recipe = new Recipe("omelette");
         testCategory.addRecipe(recipe);
+
         assertEquals(testCategory.getRecipe("omelette"), recipe);
         assertThrows(DuplicateRecipeException.class, () -> {
             testCategory.addRecipe(recipe);
@@ -43,6 +44,7 @@ class CategoryTest {
         Recipe recipe2 = new Recipe("chilli");
         testCategory.addRecipe(recipe2);
         testCategory.renameRecipe("muffin", "chocolate muffin");
+
         assertEquals(testCategory.getRecipe("chocolate muffin"), recipe);
         assertThrows(DuplicateRecipeException.class, () -> {
             testCategory.renameRecipe("chocolate muffin", "chilli");

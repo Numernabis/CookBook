@@ -41,7 +41,7 @@ public class Recipe implements Serializable {
     }
 
     public void removeIngredient(int index) throws IndexOutOfBoundsException {
-        if ( index >= recipeIngredientList.size() || index < 0)
+        if (index >= recipeIngredientList.size() || index < 0)
             throw new IndexOutOfBoundsException();
         else
             recipeIngredientList.remove(index);
@@ -96,7 +96,7 @@ public class Recipe implements Serializable {
 
     public double countPrice() {
         double totalPrice = 0.0;
-        for(RecipeIngredient rIng : recipeIngredientList){
+        for (RecipeIngredient rIng : recipeIngredientList) {
 
             double fraction = 1.0;
             if (rIng.unit.getClass().equals(VolumeUnit.class))
