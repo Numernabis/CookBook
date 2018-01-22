@@ -17,7 +17,7 @@ public class SupportViewer {
                 "\n - /quit");
     }
 
-    public void printCookBookSupport() {
+    public void printCategorySupport() {
         System.out.println("Available context functions: " +
                 "\n - showTableOfContents" +
                 "\n - setCategoryName" +

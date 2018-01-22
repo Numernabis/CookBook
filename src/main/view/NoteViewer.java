@@ -16,4 +16,8 @@ public class NoteViewer {
     public void printErrorNote(String errorNote) {
         System.out.println(errorNote);
     }
+
+    public void printEmptyCommandLineMessage() {
+        System.out.println("Command line is empty. Use /support to see available options.");
+    }
 }
