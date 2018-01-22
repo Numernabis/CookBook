@@ -50,7 +50,7 @@ public class CategoryExecutor extends UnfocusedExecutor implements IExecutionStr
                 break;
             }
             default: {
-                viewManager.noteViewer.printErrorNote("Wrong command use /support to get available commands");
+                viewManager.noteViewer.printErrorNote("Wrong command. Use /support to get available commands.");
             }
 
         }

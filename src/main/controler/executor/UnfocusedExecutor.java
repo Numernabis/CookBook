@@ -3,14 +3,14 @@ package main.controler.executor;
 import main.controler.Conductor;
 import main.model.category.Category;
 import main.model.book.*;
-import main.view.Manager;
+import main.view.ViewManager;
 
 import java.io.*;
 import java.util.List;
 
 
 public class UnfocusedExecutor implements IExecutionStrategy {
-    protected Manager viewManager;
+    protected ViewManager viewManager;
     protected Conductor conductor;
 
 
@@ -64,7 +64,7 @@ public class UnfocusedExecutor implements IExecutionStrategy {
                 break;
             }
             case "/showCookBookName": {
-                viewManager.noteViewer.printNote("CookBook name:" + conductor.getCategoryCollection().getCookBookName());
+                viewManager.noteViewer.printNote("CookBookName: " + conductor.getCategoryCollection().getCookBookName());
                 break;
             }
             case "/unfocus": {
@@ -72,8 +72,7 @@ public class UnfocusedExecutor implements IExecutionStrategy {
                 break;
             }
             default: {
-                viewManager.noteViewer.printErrorNote("Wrong command use /help to get" +
-                        " available commands");
+                viewManager.noteViewer.printErrorNote("Wrong command. Use /support to get available commands.");
                 break;
             }
         }
@@ -88,10 +87,9 @@ public class UnfocusedExecutor implements IExecutionStrategy {
             Category category = conductor.getCategoryCollection().getCategory(categoryName);
             conductor.setFocusedObject(category);
         } catch (IndexOutOfBoundsException e) {
-            viewManager.noteViewer.printErrorNote("Failed to select Category because " +
-                    "name was not defined.");
+            viewManager.noteViewer.printErrorNote("Failed to select Category, because name was not defined.");
         } catch (NotFoundCategoryException e) {
-            viewManager.noteViewer.printErrorNote("Failed to select Category because " +
+            viewManager.noteViewer.printErrorNote("Failed to select Category, because " +
                     " there is no such category, check name spelling.");
         }
     }
@@ -129,9 +127,8 @@ public class UnfocusedExecutor implements IExecutionStrategy {
         } catch (IOException e) {
             viewManager.noteViewer.printErrorNote("Failed to export CookBook because of wrong path.");
         } catch (UnnamedCookBookException e) {
-            viewManager.noteViewer.printErrorNote("Failed to export CookBook because current collection " +
-                    "you want to export is unnamed" +
-                    " use command /setCookBookName and try again.");
+            viewManager.noteViewer.printErrorNote("Failed to export CookBook because " +
+                    "it is unnamed. Use command /setCookBookName and try again.");
         }
     }
 
@@ -161,7 +158,7 @@ public class UnfocusedExecutor implements IExecutionStrategy {
                 break;
             }
             default: {
-                viewManager.noteViewer.printErrorNote("Wrong command use /help to get available commands");
+                viewManager.noteViewer.printErrorNote("Wrong command. Use /support to get available commands.");
             }
         }
     }

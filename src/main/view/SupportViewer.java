@@ -11,7 +11,7 @@ public class SupportViewer {
                 "\n - /selectCategory categoryName" +
                 "\n - /import filePath " +
                 "\n - /export filePath" +
-                "\n - /setCookBook cookBookName" +
+                "\n - /setCookBookName cookBookName" +
                 "\n - /showCookBookName" +
                 "\n - /unfocus" +
                 "\n - /quit");

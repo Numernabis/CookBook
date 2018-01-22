@@ -73,7 +73,7 @@ public class RecipeExecutor extends UnfocusedExecutor implements IExecutionStrat
                 break;
             }
             default: {
-                viewManager.noteViewer.printErrorNote("Wrong command use /support to get available commands.");
+                viewManager.noteViewer.printErrorNote("Wrong command. Use /support to get available commands.");
             }
 
         }
@@ -99,7 +99,7 @@ public class RecipeExecutor extends UnfocusedExecutor implements IExecutionStrat
         Recipe recipe = (Recipe) conductor.getFocusedObject();
         commandLine.remove(0);
         if (commandLine.isEmpty())
-            viewManager.noteViewer.printErrorNote("Failed to ad Direction , because direction was not defined.");
+            viewManager.noteViewer.printErrorNote("Failed to add Direction, because direction was not defined.");
         String direction = "";
         for (String str : commandLine)
             direction = direction + " " + str;

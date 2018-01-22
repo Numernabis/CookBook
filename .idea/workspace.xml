@@ -2,11 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b5b0214-a1b2-4398-a23b-12ff11b9e60e" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/Main.java" afterPath="$PROJECT_DIR$/src/main/CookBook.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CookBook/main/view/Manager.class" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/view/Manager.java" afterPath="$PROJECT_DIR$/src/main/view/ViewManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CookBook/main/CookBook.class" afterPath="$PROJECT_DIR$/out/production/CookBook/main/CookBook.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CookBook/main/controler/Conductor.class" afterPath="$PROJECT_DIR$/out/production/CookBook/main/controler/Conductor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CookBook/main/controler/executor/CategoryExecutor.class" afterPath="$PROJECT_DIR$/out/production/CookBook/main/controler/executor/CategoryExecutor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CookBook/main/controler/executor/RecipeExecutor.class" afterPath="$PROJECT_DIR$/out/production/CookBook/main/controler/executor/RecipeExecutor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CookBook/main/controler/executor/RecipeIngredientExecutor.class" afterPath="$PROJECT_DIR$/out/production/CookBook/main/controler/executor/RecipeIngredientExecutor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CookBook/main/controler/executor/UnfocusedExecutor.class" afterPath="$PROJECT_DIR$/out/production/CookBook/main/controler/executor/UnfocusedExecutor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CookBook/main/controler/parser/StringParser.class" afterPath="$PROJECT_DIR$/out/production/CookBook/main/controler/parser/StringParser.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/CookBook.java" afterPath="$PROJECT_DIR$/src/main/CookBook.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/controler/Conductor.java" afterPath="$PROJECT_DIR$/src/main/controler/Conductor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/view/DataViewer.java" afterPath="$PROJECT_DIR$/src/main/view/DataViewer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/view/NoteViewer.java" afterPath="$PROJECT_DIR$/src/main/view/NoteViewer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/controler/executor/CategoryExecutor.java" afterPath="$PROJECT_DIR$/src/main/controler/executor/CategoryExecutor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/controler/executor/RecipeExecutor.java" afterPath="$PROJECT_DIR$/src/main/controler/executor/RecipeExecutor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/controler/executor/RecipeIngredientExecutor.java" afterPath="$PROJECT_DIR$/src/main/controler/executor/RecipeIngredientExecutor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/controler/executor/UnfocusedExecutor.java" afterPath="$PROJECT_DIR$/src/main/controler/executor/UnfocusedExecutor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/controler/parser/StringParser.java" afterPath="$PROJECT_DIR$/src/main/controler/parser/StringParser.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/view/SupportViewer.java" afterPath="$PROJECT_DIR$/src/main/view/SupportViewer.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -19,99 +31,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="CookBook.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CookBook.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/CookBook.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="22" column="17" lean-forward="true" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
+            <state relative-caret-position="411">
+              <caret line="23" column="8" lean-forward="true" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Conductor.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/controler/Conductor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="24" column="7" lean-forward="false" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1015#1016#0" expanded="true" />
-                <element signature="e#1051#1052#0" expanded="true" />
-                <element signature="e#1090#1091#0" expanded="true" />
-                <element signature="e#1124#1125#0" expanded="true" />
-                <element signature="e#1181#1182#0" expanded="true" />
-                <element signature="e#1222#1223#0" expanded="true" />
-                <element signature="e#1261#1262#0" expanded="true" />
-                <element signature="e#1296#1297#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RecipeIngredientExecutor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/controler/executor/RecipeIngredientExecutor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1355">
-              <caret line="73" column="101" lean-forward="false" selection-start-line="73" selection-start-column="101" selection-end-line="73" selection-end-column="101" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#300#301#0" expanded="true" />
-                <element signature="e#332#333#0" expanded="true" />
-                <element signature="e#382#383#0" expanded="true" />
-                <element signature="e#454#455#0" expanded="true" />
-                <element signature="e#2837#2838#0" expanded="true" />
-                <element signature="e#2908#2909#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RecipeExecutor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/controler/executor/RecipeExecutor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="136" column="0" lean-forward="true" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#379#380#0" expanded="true" />
-                <element signature="e#411#412#0" expanded="true" />
-                <element signature="e#461#462#0" expanded="true" />
-                <element signature="e#523#524#0" expanded="true" />
-                <element signature="e#8392#8393#0" expanded="true" />
-                <element signature="e#8463#8464#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UnfocusedExecutor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/controler/executor/UnfocusedExecutor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="93" column="49" lean-forward="false" selection-start-line="93" selection-start-column="49" selection-end-line="94" selection-end-column="72" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2575#2576#0" expanded="true" />
-                <element signature="e#2640#2641#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CategoryExecutor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/controler/executor/CategoryExecutor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1140">
-              <caret line="12" column="25" lean-forward="false" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#319#320#0" expanded="true" />
-                <element signature="e#351#352#0" expanded="true" />
-                <element signature="e#401#402#0" expanded="true" />
-                <element signature="e#465#466#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -181,18 +107,20 @@
         <option value="$PROJECT_DIR$/src/main/view/Manager.java" />
         <option value="$PROJECT_DIR$/src/main/view/DataViewer.java" />
         <option value="$PROJECT_DIR$/src/main/controler/parser/IParser.java" />
-        <option value="$PROJECT_DIR$/src/main/controler/parser/StringParser.java" />
         <option value="$PROJECT_DIR$/src/main/controler/IExecutionStrategy.java" />
         <option value="$PROJECT_DIR$/src/main/controler/executor/IExecutionStrategy.java" />
         <option value="$PROJECT_DIR$/src/main/view/NoteViewer.java" />
-        <option value="$PROJECT_DIR$/src/main/view/SupportViewer.java" />
         <option value="$PROJECT_DIR$/src/main/controler/executor/UnfocusedExecution.java" />
         <option value="$PROJECT_DIR$/src/main/controler/executor/CategoryExecution.java" />
         <option value="$PROJECT_DIR$/src/main/controler/executor/RecipeExecution.java" />
-        <option value="$PROJECT_DIR$/src/main/controler/executor/RecipeExecutor.java" />
-        <option value="$PROJECT_DIR$/src/main/controler/executor/RecipeIngredientExecutor.java" />
-        <option value="$PROJECT_DIR$/src/main/CookBook.java" />
+        <option value="$PROJECT_DIR$/src/main/controler/parser/StringParser.java" />
         <option value="$PROJECT_DIR$/src/main/controler/Conductor.java" />
+        <option value="$PROJECT_DIR$/src/main/view/SupportViewer.java" />
+        <option value="$PROJECT_DIR$/src/main/controler/executor/RecipeIngredientExecutor.java" />
+        <option value="$PROJECT_DIR$/src/main/controler/executor/RecipeExecutor.java" />
+        <option value="$PROJECT_DIR$/src/main/controler/executor/CategoryExecutor.java" />
+        <option value="$PROJECT_DIR$/src/main/controler/executor/UnfocusedExecutor.java" />
+        <option value="$PROJECT_DIR$/src/main/CookBook.java" />
       </list>
     </option>
   </component>
@@ -266,36 +194,7 @@
               <item name="CookBook" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="controler" type="462c0819:PsiDirectoryNode" />
-              <item name="parser" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CookBook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CookBook" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CookBook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CookBook" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="recipe" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CookBook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CookBook" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CookBook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CookBook" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -332,7 +231,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Conductor">
+  <component name="RunManager" selected="Application.CookBook">
     <configuration name="CategoryCollectionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -377,30 +276,24 @@
       <module name="CookBook" />
       <envs />
     </configuration>
-    <configuration name="IngredientTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CookBook" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="test.ingredient.*" />
+          <option name="PATTERN" value="main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <module name="CookBook" />
+      <option name="MAIN_CLASS_NAME" value="main.CookBook" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="test.ingredient" />
-      <option name="MAIN_CLASS_NAME" value="test.ingredient.IngredientTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
+      <module name="CookBook" />
       <envs />
-      <patterns />
     </configuration>
     <configuration name="MassUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
@@ -534,19 +427,19 @@
       <listeners />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.IngredientTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.MassUnitTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.CategoryCollectionTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.OtherUnitTest" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Conductor" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.MassUnitTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.CategoryCollectionTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.OtherUnitTest" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Conductor" />
+      <item index="4" class="java.lang.String" itemvalue="Application.CookBook" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Conductor" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.OtherUnitTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.CategoryCollectionTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.MassUnitTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.IngredientTest" />
+        <item index="0" class="java.lang.String" itemvalue="Application.CookBook" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Conductor" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.OtherUnitTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.CategoryCollectionTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.MassUnitTest" />
       </list>
     </recent_temporary>
   </component>
@@ -565,7 +458,7 @@
       <workItem from="1516456808837" duration="108000" />
       <workItem from="1516457025109" duration="36000" />
       <workItem from="1516467511820" duration="12115000" />
-      <workItem from="1516613001829" duration="8668000" />
+      <workItem from="1516613001829" duration="11725000" />
     </task>
     <servers />
   </component>
@@ -602,7 +495,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40818000" />
+    <option name="totallyTimeSpent" value="43875000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -843,7 +736,7 @@
         <state relative-caret-position="722">
           <caret line="38" column="52" lean-forward="true" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -912,14 +805,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/view/Manager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/view/DataViewer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -938,79 +823,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controler/executor/IExecutionStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/controler/parser/IParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controler/parser/StringParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/view/SupportViewer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="34" lean-forward="true" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controler/executor/UnfocusedExecutor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="93" column="49" lean-forward="false" selection-start-line="93" selection-start-column="49" selection-end-line="94" selection-end-column="72" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2575#2576#0" expanded="true" />
-            <element signature="e#2640#2641#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controler/executor/CategoryExecutor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1140">
-          <caret line="12" column="25" lean-forward="false" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#319#320#0" expanded="true" />
-            <element signature="e#351#352#0" expanded="true" />
-            <element signature="e#401#402#0" expanded="true" />
-            <element signature="e#465#466#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controler/executor/RecipeExecutor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="136" column="0" lean-forward="true" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#379#380#0" expanded="true" />
-            <element signature="e#411#412#0" expanded="true" />
-            <element signature="e#461#462#0" expanded="true" />
-            <element signature="e#523#524#0" expanded="true" />
-            <element signature="e#8392#8393#0" expanded="true" />
-            <element signature="e#8463#8464#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1022,22 +839,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controler/executor/RecipeIngredientExecutor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1355">
-          <caret line="73" column="101" lean-forward="false" selection-start-line="73" selection-start-column="101" selection-end-line="73" selection-end-column="101" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#300#301#0" expanded="true" />
-            <element signature="e#332#333#0" expanded="true" />
-            <element signature="e#382#383#0" expanded="true" />
-            <element signature="e#454#455#0" expanded="true" />
-            <element signature="e#2837#2838#0" expanded="true" />
-            <element signature="e#2908#2909#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/model/recipe/Recipe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="12">
@@ -1046,30 +847,104 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/CookBook.java">
+    <entry file="file://$PROJECT_DIR$/src/main/controler/parser/StringParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="17" lean-forward="true" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
+        <state relative-caret-position="95">
+          <caret line="5" column="86" lean-forward="false" selection-start-line="5" selection-start-column="86" selection-end-line="5" selection-end-column="86" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/controler/executor/IExecutionStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/controler/Conductor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="24" column="7" lean-forward="false" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
+        <state relative-caret-position="342">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1015#1016#0" expanded="true" />
-            <element signature="e#1051#1052#0" expanded="true" />
-            <element signature="e#1090#1091#0" expanded="true" />
-            <element signature="e#1124#1125#0" expanded="true" />
-            <element signature="e#1181#1182#0" expanded="true" />
-            <element signature="e#1222#1223#0" expanded="true" />
-            <element signature="e#1261#1262#0" expanded="true" />
-            <element signature="e#1296#1297#0" expanded="true" />
+            <element signature="e#843#844#0" expanded="true" />
+            <element signature="e#879#880#0" expanded="true" />
+            <element signature="e#922#923#0" expanded="true" />
+            <element signature="e#956#957#0" expanded="true" />
+            <element signature="e#1013#1014#0" expanded="true" />
+            <element signature="e#1054#1055#0" expanded="true" />
+            <element signature="e#1093#1094#0" expanded="true" />
+            <element signature="e#1128#1129#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/view/SupportViewer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-380">
+          <caret line="13" column="38" lean-forward="false" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/view/ViewManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/controler/executor/RecipeExecutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="75" column="109" lean-forward="false" selection-start-line="75" selection-start-column="109" selection-end-line="75" selection-end-column="109" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/controler/executor/RecipeIngredientExecutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="35" column="109" lean-forward="false" selection-start-line="35" selection-start-column="109" selection-end-line="35" selection-end-column="109" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/controler/executor/CategoryExecutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="692">
+          <caret line="52" column="109" lean-forward="false" selection-start-line="52" selection-start-column="109" selection-end-line="52" selection-end-column="109" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/controler/executor/UnfocusedExecutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2023">
+          <caret line="128" column="46" lean-forward="true" selection-start-line="128" selection-start-column="46" selection-end-line="128" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/CookBook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="23" column="8" lean-forward="true" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

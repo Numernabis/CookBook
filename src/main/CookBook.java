@@ -9,21 +9,31 @@ import java.io.InputStreamReader;
 import java.util.List;
 
 public class CookBook {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Conductor conductor = new Conductor(new StringParser());
 
-        try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+        StringBuffer b = new StringBuffer();
+        for (int i = 1; i < 15; i++)
+            b.append('\u058D');
+
+        String info = "Welcome in CookBook :)\n";
+        info += b;
+        info += "\nTo get available commands use /support.\n";
+        System.out.println(info);
+
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
             while (true) {
-                String line = br.readLine();
-                List<String> lines = conductor.parser.parse(line);
-                if(line.equals("quit") || line.equals("q") || line.equals("/q") || line.equals("/quit"))
+                String singleLine = br.readLine();
+                List<String> lines = conductor.parser.parse(singleLine);
+
+                if (singleLine.equals("quit") || singleLine.equals("q")
+                        || singleLine.equals("/quit") || singleLine.equals("/q"))
                     return;
                 else {
                     conductor.executionStrategy.execute(lines);
                 }
             }
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
