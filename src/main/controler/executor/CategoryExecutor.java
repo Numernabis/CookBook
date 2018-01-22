@@ -50,7 +50,7 @@ public class CategoryExecutor extends UnfocusedExecutor implements IExecutionStr
                 break;
             }
             default: {
-                viewManager.noteViewer.printErrorNote("Wrong command. Use /support to get available commands.");
+                viewManager.noteViewer.printErrorNote("Wrong command. Use .support to get available commands.");
             }
 
         }
@@ -64,9 +64,9 @@ public class CategoryExecutor extends UnfocusedExecutor implements IExecutionStr
             viewManager.noteViewer.printErrorNote("Failed to set CategoryName, because there is no such category.");
         } catch (DuplicateCategoryException e) {
             viewManager.noteViewer.printErrorNote("Failed to set CategoryName, because category " +
-                    "with that name already exists in that CookBook.");
+                    "with that name already exists in CookBook.");
         } catch (IndexOutOfBoundsException e) {
-            viewManager.noteViewer.printErrorNote("Failed to set CategoryName, because name was not defined.");
+            viewManager.noteViewer.printErrorNote("Failed to set CategoryName, because name was not provided.");
         }
     }
 
@@ -76,9 +76,9 @@ public class CategoryExecutor extends UnfocusedExecutor implements IExecutionStr
             Category category = (Category) conductor.getFocusedObject();
             category.addRecipe(new Recipe(name));
         } catch (IndexOutOfBoundsException e) {
-            viewManager.noteViewer.printErrorNote("Failed to add Recipe, because name was not defined.");
+            viewManager.noteViewer.printErrorNote("Failed to add Recipe, because name was not provided.");
         } catch (DuplicateRecipeException e) {
-            viewManager.noteViewer.printErrorNote("Failed to add Recipe, because book with that name already exists.");
+            viewManager.noteViewer.printErrorNote("Failed to add Recipe, because recipe with that name already exists.");
 
         }
     }
@@ -88,7 +88,7 @@ public class CategoryExecutor extends UnfocusedExecutor implements IExecutionStr
             Category category = (Category) conductor.getFocusedObject();
             category.removeRecipe(commandLine.get(1));
         } catch (IndexOutOfBoundsException e) {
-            viewManager.noteViewer.printErrorNote("Failed to remove Recipe, because name was not defined.");
+            viewManager.noteViewer.printErrorNote("Failed to remove Recipe, because name was not provided.");
         }
     }
 
@@ -103,7 +103,7 @@ public class CategoryExecutor extends UnfocusedExecutor implements IExecutionStr
             else
                 conductor.setFocusedObject(recipe);
         } catch (IndexOutOfBoundsException e) {
-            viewManager.noteViewer.printErrorNote("Failed to select Recipe, because name was not defined.");
+            viewManager.noteViewer.printErrorNote("Failed to select Recipe, because name was not provided.");
         }
     }
 

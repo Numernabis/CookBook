@@ -23,56 +23,56 @@ public class UnfocusedExecutor implements IExecutionStrategy {
     public void execute(List<String> commandLine) {
         if (commandLine.isEmpty()) {
             viewManager.noteViewer.printEmptyCommandLineMessage();
-        } else if (commandLine.get(0).substring(0, 1).equals("/")) {
+        } else if (commandLine.get(0).substring(0, 1).equals(".")) {
             executeConsoleCommand(commandLine);
         } else executeContextCommand(commandLine);
     }
 
     private void executeConsoleCommand(List<String> commandLine) {
         switch (commandLine.get(0)) {
-            case "/support": {
+            case ".support": {
                 viewManager.supportViewer.printSupport();
                 showSupport();
                 break;
             }
-            case "/context": {
+            case ".context": {
                 viewManager.noteViewer.printContext(conductor.getFocusedObject());
                 break;
             }
-            case "/showCategories": {
+            case ".showCategories": {
                 viewManager.dataViewer.showCategories(conductor.getCookBook().getTableOfContents());
                 break;
             }
-            case "/selectCategory": {
+            case ".selectCategory": {
                 selectCategory(commandLine);
                 break;
             }
-            case "/import": {
+            case ".import": {
                 importCookBook(commandLine);
                 break;
             }
-            case "/export": {
+            case ".export": {
                 exportCookBook(commandLine);
                 break;
             }
-            case "/newCategory": {
+            case ".newCategory": {
                 createCategory(commandLine);
                 break;
             }
-            case "/setCookBookName": {
+            case ".setCookBookName": {
                 setCookBookName(commandLine);
                 break;
             }
-            case "/showCookBookName": {
+            case ".showCookBookName": {
                 viewManager.noteViewer.printNote("CookBookName: " + conductor.getCookBook().getCookBookName());
                 break;
             }
-            case "/unfocus": {
+            case ".unfocus": {
                 conductor.setFocusedObject(null);
                 break;
             }
             default: {
-                viewManager.noteViewer.printErrorNote("Wrong command. Use /support to get available commands.");
+                viewManager.noteViewer.printErrorNote("Wrong command. Use .support to get available commands.");
                 break;
             }
         }
@@ -102,19 +102,19 @@ public class UnfocusedExecutor implements IExecutionStrategy {
             currentCookBook.merge(importedCookBook);
             viewManager.noteViewer.printNote("Successfully imported CookBook from " + path);
         } catch (IndexOutOfBoundsException e) {
-            viewManager.noteViewer.printErrorNote("Failed to import CookBook because path was not given.");
+            viewManager.noteViewer.printErrorNote("Failed to import CookBook, because path was not given.");
         } catch (EOFException e) {
-            viewManager.noteViewer.printErrorNote("Failed to import CookBook because program found end of file. " +
+            viewManager.noteViewer.printErrorNote("Failed to import CookBook, because program found end of file. " +
                     "Make sure that selected directory is not an empty file.");
         } catch (StreamCorruptedException e) {
-            viewManager.noteViewer.printErrorNote("Failed to import CookBook because wrong type of stream. " +
+            viewManager.noteViewer.printErrorNote("Failed to import CookBook, because wrong type of stream. " +
                     "File may have wrong type, make sure the path point at \".ser\" file.");
         } catch (InvalidClassException e) {
-            viewManager.noteViewer.printErrorNote("Failed to import CookBook because obsolete version of book file.");
+            viewManager.noteViewer.printErrorNote("Failed to import CookBook, because obsolete version of book file.");
         } catch (IOException e) {
-            viewManager.noteViewer.printErrorNote("Failed to import CookBook because of wrong path.");
+            viewManager.noteViewer.printErrorNote("Failed to import CookBook, because of wrong path.");
         } catch (ClassNotFoundException e) {
-            viewManager.noteViewer.printErrorNote("Failed to import CookBook because CookBook is not defined.");
+            viewManager.noteViewer.printErrorNote("Failed to import CookBook, because CookBook is not defined.");
         }
     }
 
@@ -124,12 +124,12 @@ public class UnfocusedExecutor implements IExecutionStrategy {
             conductor.getCookBook().serialize(path);
             viewManager.noteViewer.printNote("Successfully exported CookBook to " + path);
         } catch (IndexOutOfBoundsException e) {
-            viewManager.noteViewer.printErrorNote("Failed to export CookBook because name was not defined.");
+            viewManager.noteViewer.printErrorNote("Failed to export CookBook, because name was not defined.");
         } catch (IOException e) {
-            viewManager.noteViewer.printErrorNote("Failed to export CookBook because of wrong path.");
+            viewManager.noteViewer.printErrorNote("Failed to export CookBook, because of wrong path.");
         } catch (UnnamedCookBookException e) {
-            viewManager.noteViewer.printErrorNote("Failed to export CookBook because " +
-                    "it is unnamed. Use command /setCookBookName and try again.");
+            viewManager.noteViewer.printErrorNote("Failed to export CookBook, because " +
+                    "it is unnamed. Use command .setCookBookName and try again.");
         }
     }
 
@@ -138,9 +138,9 @@ public class UnfocusedExecutor implements IExecutionStrategy {
             String name = commandLine.get(1);
             conductor.getCookBook().addCategory(new Category(name));
         } catch (IndexOutOfBoundsException e) {
-            viewManager.noteViewer.printErrorNote("Failed to create category - name was not defined.");
+            viewManager.noteViewer.printErrorNote("Failed to create category, name was not provided.");
         } catch (DuplicateCategoryException e) {
-            viewManager.noteViewer.printErrorNote("Failed to create category - category with that name already exists.");
+            viewManager.noteViewer.printErrorNote("Failed to create category, category with that name already exists.");
         }
     }
 
@@ -148,7 +148,7 @@ public class UnfocusedExecutor implements IExecutionStrategy {
         try {
             conductor.getCookBook().setCookBookName(commandLine.get(1));
         } catch (IndexOutOfBoundsException e) {
-            viewManager.noteViewer.printErrorNote("Failed to set CookBookName because name was not provided.");
+            viewManager.noteViewer.printErrorNote("Failed to set CookBookName, because name was not provided.");
         }
     }
 
@@ -159,7 +159,7 @@ public class UnfocusedExecutor implements IExecutionStrategy {
                 break;
             }
             default: {
-                viewManager.noteViewer.printErrorNote("Wrong command. Use /support to get available commands.");
+                viewManager.noteViewer.printErrorNote("Wrong command. Use .support to get available commands.");
             }
         }
     }
@@ -168,7 +168,7 @@ public class UnfocusedExecutor implements IExecutionStrategy {
         try {
             conductor.getCookBook().removeCategory(commandLine.get(1));
         } catch (IndexOutOfBoundsException e) {
-            viewManager.noteViewer.printErrorNote("Failed to remove category because name was not provided.");
+            viewManager.noteViewer.printErrorNote("Failed to remove category, because name was not provided.");
         }
     }
 }

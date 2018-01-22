@@ -73,7 +73,7 @@ public class RecipeExecutor extends UnfocusedExecutor implements IExecutionStrat
                 break;
             }
             default: {
-                viewManager.noteViewer.printErrorNote("Wrong command. Use /support to get available commands.");
+                viewManager.noteViewer.printErrorNote("Wrong command. Use .support to get available commands.");
             }
 
         }
@@ -85,13 +85,13 @@ public class RecipeExecutor extends UnfocusedExecutor implements IExecutionStrat
             Category category = (Category) conductor.getParentObject();
             category.renameRecipe(oldName, commandLine.get(1));
         } catch (IndexOutOfBoundsException e) {
-            viewManager.noteViewer.printErrorNote("Failed to set recipeName , because name was not defined.");
+            viewManager.noteViewer.printErrorNote("Failed to set RecipeName, because name was not defined.");
         } catch (DuplicateRecipeException e) {
-            viewManager.noteViewer.printErrorNote("Failed to set recipeName, because recipe with that name already" +
-                    "exists in that cookbook");
+            viewManager.noteViewer.printErrorNote("Failed to set RecipeName, because recipe with that name already" +
+                    "exists in that category.");
         } catch (NotFoundRecipeException e) {
-            viewManager.noteViewer.printErrorNote("Failed to set recipeName, because Cook Book Don't Exist" +
-                    "in that cookbook");
+            viewManager.noteViewer.printErrorNote("Failed to set RecipeName, because recipe with given oldName" +
+                    "doesn't exists in that category.");
         }
     }
 
@@ -178,10 +178,10 @@ public class RecipeExecutor extends UnfocusedExecutor implements IExecutionStrat
             Duration duration = Duration.ofMinutes(hours * 60 + minutes);
             return duration;
         } catch (IndexOutOfBoundsException e) {
-            viewManager.noteViewer.printErrorNote("Failed to set Time, because of to few arguments use /help" +
-                    "to get more information about arguments.");
+            viewManager.noteViewer.printErrorNote("Failed to set Time, because of to few arguments.\n" +
+                    "Use .support to get information about proper arguments.");
         } catch (NumberFormatException e) {
-            viewManager.noteViewer.printErrorNote("Failed to remove Time, because argument is not a number.");
+            viewManager.noteViewer.printErrorNote("Failed to set Time, because argument is not a number.");
         }
         return null;
     }
@@ -194,7 +194,7 @@ public class RecipeExecutor extends UnfocusedExecutor implements IExecutionStrat
         } catch (IndexOutOfBoundsException e) {
             viewManager.noteViewer.printErrorNote("Failed to select Ingredient, Ingredient with that index does not exist");
         } catch (NumberFormatException e) {
-            viewManager.noteViewer.printErrorNote("Failed to select Ingredient, because quantity is not a number.");
+            viewManager.noteViewer.printErrorNote("Failed to select Ingredient, because index is not a number.");
         } catch (IllegalArgumentException e) {
             viewManager.noteViewer.printErrorNote("Failed to select Ingredient, check if you wrote proper arguments.");
         }

@@ -2,11 +2,6 @@ package main;
 
 import main.controler.Conductor;
 import main.controler.parser.StringParser;
-import main.model.book.*;
-import main.model.category.*;
-import main.model.recipe.*;
-import main.model.ingredient.*;
-import main.model.unit.*;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -25,7 +20,7 @@ public class CookBook {
 
         String info = "Welcome in CookBook :)\n";
         info += b;
-        info += "\nTo get available commands use /support.\n";
+        info += "\nTo get available commands use .support.\n";
         System.out.println(info);
 
         try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
@@ -34,7 +29,7 @@ public class CookBook {
                 List<String> lines = conductor.parser.parse(singleLine);
 
                 if (singleLine.equals("quit") || singleLine.equals("q")
-                        || singleLine.equals("/quit") || singleLine.equals("/q"))
+                        || singleLine.equals(".quit") || singleLine.equals(".q"))
                     return;
                 else {
                     conductor.executionStrategy.execute(lines);

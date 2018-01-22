@@ -33,7 +33,7 @@ public class RecipeIngredientExecutor extends UnfocusedExecutor implements IExec
                 break;
             }
             default: {
-                viewManager.noteViewer.printErrorNote("Wrong command. Use /support to get available commands.");
+                viewManager.noteViewer.printErrorNote("Wrong command. Use .support to get available commands.");
             }
         }
     }

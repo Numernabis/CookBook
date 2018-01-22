@@ -66,22 +66,22 @@ public class DataViewer {
     public void showMeasures() {
         System.out.println("Available mass units: ");
         for (MassUnit measureUnit : MassUnit.values()) {
-            System.out.println("* " + measureUnit.toString());
+            System.out.println("+ " + measureUnit.toString());
         }
         System.out.println("Available volume units: ");
         for (VolumeUnit volumeUnit : VolumeUnit.values()) {
-            System.out.println("* " + volumeUnit.toString());
+            System.out.println("+ " + volumeUnit.toString());
         }
         System.out.println("Available other units: ");
         for (OtherUnit otherUnit : OtherUnit.values()) {
-            System.out.println("* " + otherUnit.toString());
+            System.out.println("+ " + otherUnit.toString());
         }
     }
 
     public void showIngredients() {
         System.out.println("Available ingredients: ");
         for (Ingredient ingredient : Ingredient.values()) {
-            System.out.println("* " + ingredient.toString());
+            System.out.println("+ " + ingredient.toString());
         }
     }
 }

@@ -4,17 +4,17 @@ public class SupportViewer {
 
     public void printSupport() {
         System.out.println("Available global functions: " +
-                "\n - /support" +
-                "\n - /context" +
-                "\n - /showCategories" +
-                "\n - /newCategory categoryName" +
-                "\n - /selectCategory categoryName" +
-                "\n - /import filePath " +
-                "\n - /export filePath" +
-                "\n - /setCookBookName cookBookName" +
-                "\n - /showCookBookName" +
-                "\n - /unfocus" +
-                "\n - /quit");
+                "\n - .support" +
+                "\n - .context" +
+                "\n - .showCategories" +
+                "\n - .newCategory categoryName" +
+                "\n - .selectCategory categoryName" +
+                "\n - .import filePath " +
+                "\n - .export filePath" +
+                "\n - .setCookBookName cookBookName" +
+                "\n - .showCookBookName" +
+                "\n - .unfocus" +
+                "\n - .quit");
     }
 
     public void printCategorySupport() {
