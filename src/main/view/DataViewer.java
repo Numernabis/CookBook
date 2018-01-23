@@ -32,7 +32,7 @@ public class DataViewer {
         }
     }
 
-    public void showRecipe(Recipe recipe) {
+    public void showRecipe(Recipe recipe, int portions) {
         String recipeData = "Recipe: " + recipe.getRecipeName() + "\n\n";
         String preparationTime = "not known";
         if (recipe.getPreparationTime() != null) {
@@ -49,7 +49,7 @@ public class DataViewer {
         recipeData += "Ingredients:\n";
         int index = 1;
         for (RecipeIngredient ingredient : recipe.getRecipeIngredientList()) {
-            recipeData += "\t " + String.valueOf(index) + ". " + ingredient.toString() + "\n";
+            recipeData += "\t " + String.valueOf(index) + ": " + ingredient.toString(portions) + "\n";
             index++;
         }
         recipeData += "\nDirections:\n";
@@ -58,7 +58,7 @@ public class DataViewer {
             recipeData += "\t" + String.valueOf(index) + ". " + direction + "\n";
             index++;
         }
-        recipeData += "\nTotal cost of ingredients: " + recipe.countPrice() + "\n\n";
+        recipeData += "\nTotal cost of ingredients: " + String.format("%.2f", recipe.countPrice(portions)) + "\n\n";
 
         System.out.println(recipeData);
     }

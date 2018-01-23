@@ -94,7 +94,7 @@ public class Recipe implements Serializable {
         return directions;
     }
 
-    public double countPrice() {
+    public double countPrice(int portions) {
         double totalPrice = 0.0;
         for (RecipeIngredient rIng : recipeIngredientList) {
 
@@ -119,7 +119,7 @@ public class Recipe implements Serializable {
                 }
 
             double quantityInBasicUnit = fraction * rIng.getQuantity();
-            totalPrice += rIng.getIngredient().getPrice() * quantityInBasicUnit;
+            totalPrice += rIng.getIngredient().getPrice() * quantityInBasicUnit * portions;
 
         }
         return totalPrice;

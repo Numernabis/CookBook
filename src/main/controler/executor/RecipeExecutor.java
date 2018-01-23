@@ -29,7 +29,7 @@ public class RecipeExecutor extends UnfocusedExecutor implements IExecutionStrat
                 break;
             }
             case "showRecipe": {
-                viewManager.dataViewer.showRecipe((Recipe) conductor.getFocusedObject());
+                showRecipe(commandLine);
                 break;
             }
             case "addDirection": {
@@ -92,6 +92,18 @@ public class RecipeExecutor extends UnfocusedExecutor implements IExecutionStrat
         } catch (NotFoundRecipeException e) {
             viewManager.noteViewer.printErrorNote("Failed to set RecipeName, because recipe with given oldName" +
                     "doesn't exists in that category.");
+        }
+    }
+
+    private void showRecipe(List<String> commandLine) {
+        try {
+            int portions = Integer.valueOf(commandLine.get(1));
+            Recipe recipe = (Recipe) conductor.getFocusedObject();
+            viewManager.dataViewer.showRecipe(recipe, portions);
+        } catch (IndexOutOfBoundsException e) {
+            viewManager.noteViewer.printErrorNote("Failed to show Recipe, because portions was not defined.");
+        } catch (NumberFormatException e) {
+            viewManager.noteViewer.printErrorNote("Failed to show Recipe, because portions is not a number.");
         }
     }
 

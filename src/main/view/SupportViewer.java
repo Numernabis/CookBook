@@ -31,7 +31,7 @@ public class SupportViewer {
     public void printRecipeSupport() {
         System.out.println("Available context functions: " +
                 "\n - setRecipeName" +
-                "\n - showRecipe" +
+                "\n - showRecipe portions" +
                 "\n - addDirection [Direction]" +
                 "\n - removeDirection index" +
                 "\n - addIngredient quantity measure ingredient" +

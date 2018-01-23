@@ -42,9 +42,9 @@ public class RecipeIngredient implements Serializable {
         return ingredient;
     }
 
-    @Override
-    public String toString() {
-        return Double.toString(quantity) + " " + unit.toString() + " " + ingredient.toString();
+
+    public String toString(int portions) {
+        return Double.toString(quantity * portions) + " " + unit.toString() + " " + ingredient.toString();
     }
 
     @Override
